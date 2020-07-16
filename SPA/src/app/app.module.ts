@@ -3,9 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 //routes
-import { APP_ROUTING } from "./app.routes";
 import { AppRoutingModule } from './app-routing.module';
-
 
 //componentes
 import { AppComponent } from './app.component';
@@ -18,14 +16,13 @@ import { HeroesComponent } from './components/heroes/heroes.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent,
-    AboutComponent,
-    HeroesComponent
+   HomeComponent,
+   AboutComponent,
+   HeroesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    APP_ROUTING
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
