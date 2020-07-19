@@ -1,0 +1,15 @@
+<h1>Palabra buscada <small>{{ searchedWord }}</small></h1>
+<hr>
+<div class="row">
+    <div class="col-md-12 ">
+        <div *ngIf="heroes.length == 0" class="alert alert-info" role="alert">
+            <h2 >Oops! there is no coincidence with "{{searchedWord }}"</h2>
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+     <app-hero-card [heroe] = "heroe" [index] = "i" *ngFor="let heroe of heroes; let i = index"></app-hero-card>
+</div>
+
+

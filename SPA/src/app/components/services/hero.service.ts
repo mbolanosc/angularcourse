@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { RouteConfigLoadEnd } from '@angular/router';
-//import { Injectable  } from "@angular/core";
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +10,14 @@ export class HeroService {
   {
     nombre: "Aquaman",
     bio: "El poder más reconocido de Aquaman es la capacidad telepática para comunicarse con la vida marina, la cual puede convocar a grandes distancias.",
-    img: "../../../assets/img /aquaman.png",
+    img: "../../../assets/img/aquaman.png",
     aparicion: "1941-11-01",
     casa:"DC"
   },
   {
     nombre: "Batman",
     bio: "Los rasgos principales de Batman se resumen en «destreza física, habilidades deductivas y obsesión». La mayor parte de las características básicas de los cómics han variado por las diferentes interpretaciones que le han dado al personaje.",
-    img: "../../../assets/img /batman.png",
+    img: "../../../assets/img/batman.png",
     aparicion: "1939-05-01",
     casa:"DC"
   },
@@ -67,6 +66,22 @@ export class HeroService {
 
    getHeroe(i:string){
      return this.heroes[i];
+   }
+
+   searchHeroes( txt: string ):Heroe[]{
+      let heroesArr: Heroe[]= [];
+      txt = txt.toLowerCase();
+
+      for (let heroe of this.heroes) {
+
+        let localName = heroe.nombre.toLowerCase();
+
+        if( localName.indexOf( txt ) >= 0 ){
+          heroesArr.push(heroe);
+        }
+
+      }
+      return heroesArr;
    }
 }
 
