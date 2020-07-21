@@ -1,5 +1,4 @@
 <h2 class="mt-3">Pipes <small>Angular</small></h2>
-
 <hr>
 
 <div class="row">
@@ -13,6 +12,12 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <th> {{name2}} </th>
+          <th> pipe capitalizado </th>
+          <th> {{name2 }} </th>
+        </tr>
+
         <tr>
           <th> {{name}} </th>
           <th> uppercase </th>
@@ -79,7 +84,23 @@
           <th> {{ salary | currency: "EUR"}} </th>
         </tr>
 
+        <tr>
+          <th> {{ valuePromise }} </th>
+          <th> async </th>
+          <th> {{ valuePromise | async }} </th>
+        </tr>
       
+        <tr>
+          <th> {{ date }} </th>
+          <th> date </th>
+          <th> {{ date | date }} </th>
+        </tr>
+
+        <tr>
+          <th> {{ date }} </th>
+          <th> date : 'short' </th>
+          <th> {{ date | date : 'short'}} </th>
+        </tr>
 
       </tbody>
     </table>
@@ -108,14 +129,3 @@
 </div>
 
 <br>
-
-<div class="row">
-  <div class="col-md-6">
-    
-  </div>
-</div>
-
-<br>
-
-
-
