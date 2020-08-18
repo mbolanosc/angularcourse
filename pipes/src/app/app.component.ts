@@ -22,6 +22,10 @@ export class AppComponent {
 
   date:Date =  new Date();
 
+  videoUrl : string = 'https://www.youtube.com/embed/G6PZm8vhm6I';
+
+  trigger : boolean = true;
+  
   hero={
     name: "peter parker",
     keyname: "spiderman",

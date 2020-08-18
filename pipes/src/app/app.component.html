@@ -6,16 +6,16 @@
     <table class="table">
       <thead class="thead-dark">
         <tr>
-         <th>Variable</th>
-         <th>Pipe</th>
-         <th>Exit</th>
+          <th>Variable</th>
+          <th>Pipe</th>
+          <th>Exit</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th> {{name2}} </th>
           <th> pipe capitalizado </th>
-          <th> {{name2 }} </th>
+          <th> {{name2 | capitalizado:'true'}} </th>
         </tr>
 
         <tr>
@@ -68,7 +68,7 @@
 
         <tr>
           <th> {{ percent}} </th>
-          <th>  percent:'2.2-2' </th>
+          <th> percent:'2.2-2' </th>
           <th> {{ percent | percent:'2.2-2' }} </th>
         </tr>
 
@@ -89,7 +89,7 @@
           <th> async </th>
           <th> {{ valuePromise | async }} </th>
         </tr>
-      
+
         <tr>
           <th> {{ date }} </th>
           <th> date </th>
@@ -100,6 +100,15 @@
           <th> {{ date }} </th>
           <th> date : 'short' </th>
           <th> {{ date | date : 'short'}} </th>
+        </tr>
+
+        <tr>
+          <th> {{ name }} </th>
+          <th> passwrd : {{trigger}}
+            <br>
+            <button (click) = "trigger = !trigger" class="btn btn-outline-primary">  Trigger </button>
+          </th>
+          <th> {{ name | password : trigger}} </th>
         </tr>
 
       </tbody>
@@ -124,8 +133,19 @@
     <hr>
     <pre>
       {{ hero | json }}
-    </pre> 
+    </pre>
   </div>
+</div>
+
+<div class="row">
+  <div class="col-mt-4">
+    <h3> SAFE DOM </h3>
+    <hr>
+    <iframe width="560" height="315" [src]="videoUrl | domsafe" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  
 </div>
 
 <br>
